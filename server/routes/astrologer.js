@@ -182,7 +182,6 @@ router.post("/createAstroBulk", async (req, res) => {
       return res.status(400).json({ error: "Request body must be an array of astrologers" });
     }
     
-    // Use insertMany to create multiple records at once
     const createdAstrologers = await Astrologer.insertMany(astrologers);
     res.status(201).json(createdAstrologers);
   } catch (err) {
